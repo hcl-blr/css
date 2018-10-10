@@ -109,17 +109,277 @@ border radius
 	}
 	</style>
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+.box{
+			width: 900px;
+			height: 100px;
+			margin: 100px auto;
+			background-color: blanchedalmond;
+			border: 20px solid gray;
+			border-image: url("images/border1.jpg") 20 20 20 20 stretch;
+		}
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+<style>
+        .box{
+            width: 598px;
+            height: 387px;
+            background-image: url("images/herosmall.jpg");
+        }
+        /*
+        .box p{
+            background-color: tomato;
+            font-family: arial;
+            font-size: 20px;
+            height: 387px;
+            opacity: 0.5;
+        }
+        */
+        .box p{
+            background-color: rgba(255, 0, 0, 0.6);
+            font-family: arial;
+            font-size: 20px;
+            height: 387px;
+            text-align: justify;
+        }
+    </style>
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+$myCol:red
+$myFont:20px
+$myString:'../images/rajani.jpg'
+$myList : 2px solid black
+
+body
+    background-color: $myCol
+
+.box
+    font-family: Arial, Helvetica, sans-serif
+    font-size: $myFont
+.box2
+    font-family: Arial, Helvetica, sans-serif
+    font-size: $myFont*2
+.box3
+    font-family: Arial, Helvetica, sans-serif
+    font-size: $myFont+5
+.box4
+   background-image: url($myString)
+   height: $myFont*5
+
+.box5
+    height: $myFont*10
+    width: $myFont*10
+    border : $myList
+    background-color: lighten($myCol,20)
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+$myCol:#ff0000;
+$myBlue:#0000ff;
+$myGreen:#00ff00;
+$myFont:20px;
+$myString:'../images/batman.jpg';
+$myList: 2px solid black;
+$myList2: $myFont/5 dotted darken($myCol, 50);
+$user : 'female';
+
+.boxer1{
+  width : 400px;
+  height : 200px;
+  background-color : if($user == 'male', blue, pink);
+}
+
+
+@mixin IbmMixin($width, $style, $color){
+    height: $width*100;
+    width: $width*100;
+    border : $width $style $color;
+}
+
+article{
+    text-align: justify;
+}
+body{
+    background-color: $myCol;
+}
+.box{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: $myFont;
+}
+.box2{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: $myFont*2;
+}
+.box3{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: $myFont+5;
+}
+.box4{
+    background-image: url($myString);
+    height: $myFont*5;
+}
+.box5{
+    @include IbmMixin(2px, dotted, orange);
+    background-color: darken($myCol,20);
+}
+.box6{
+    @include IbmMixin(4px, dashed, green);
+    background-color: lighten($myCol,20);
+}
+
+.box7{
+    height: $myFont*10;
+    width: $myFont*10;
+    border: $myList2;
+}
+section{
+    border : $myList2;
+    padding: 10px;
+    article{
+        border : $myList2;
+        height : 200px;
+        margin: 10px;
+        &:hover{
+            font-size: $myFont*2;
+        }
+    }
+}
+
+[class ^= "player"]{
+    width: 200px;
+    height: 100px;
+    margin-bottom: 5px;
+}
+
+.player1{
+    background-color: $myGreen;
+}
+.player2{
+    background-color: darken($myGreen, 20);
+}
+.player3{
+    background-color: lighten($myGreen, 20);
+}
+.player4{
+    background-color: saturate($myGreen, 20);
+}
+.player5{
+    background-color: desaturate($myGreen, 20);
+}
+.player6{
+    background-color: adjust-hue($myGreen, 20);
+}
+.player7{
+    background-color: rgba( $myGreen, .7 );
+}
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+@import 'one.scss'
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>transform</title>
+	<style>
+        @-moz-keyframes ibmkeys{
+            from{
+                background-color: papayawhip;
+                transform: rotate(0deg);
+                box-shadow: 0px 0px 0px transparent;
+            }
+            to{
+                background-color: olivedrab;
+                transform: rotate(360deg);
+                box-shadow: 0px 0px 20px black;
+            }
+        }
+        @-webkit-keyframes ibmkeys{
+            from{
+                background-color: papayawhip;
+                transform: rotate(0deg);
+                box-shadow: 0px 0px 0px transparent;
+            }
+            to{
+                background-color: olivedrab;
+                transform: rotate(360deg);
+                box-shadow: 0px 0px 20px black;
+            }
+        }
+        .box{
+            width: 200px;
+            height: 200px;
+            background-color: papayawhip;
+            margin: 100px auto;
+            -moz-animation-name: ibmkeys;
+            -moz-animation-duration: 6s;
+            -moz-animation-iteration-count: infinite;
+                -webkit-animation-name: ibmkeys;
+                -webkit-animation-duration: 6s;      
+                -webkit-animation-iteration-count: infinite;
+            animation-name: ibmkeys;
+            animation-duration: 6s; 
+            animation-iteration-count: infinite;
+        }
+	</style>
+</head>
+<body>
+	<div class="box"></div>
+</body>
+</html>
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>transform</title>
+	<style>
+        @-moz-keyframes ibmkeys{
+            0%{
+                background-color: papayawhip;
+                transform: rotate(0deg);
+                box-shadow: 0px 0px 0px transparent;
+            }
+            100%{
+                background-color: olivedrab;
+                transform: rotate(360deg);
+                box-shadow: 0px 0px 20px black;
+            }
+        }
+        @-webkit-keyframes ibmkeys{
+            0%{
+                background-color: papayawhip;
+                transform: rotate(0deg);
+                box-shadow: 0px 0px 0px transparent;
+            }
+            100%{
+                background-color: olivedrab;
+                transform: rotate(360deg);
+                box-shadow: 0px 0px 20px black;
+            }
+        }
+        .box{
+            width: 200px;
+            height: 200px;
+            background-color: papayawhip;
+            margin: 100px auto;
+            -moz-animation-name: ibmkeys;
+            -moz-animation-duration: 6s;
+            -moz-animation-iteration-count: infinite;
+                -webkit-animation-name: ibmkeys;
+                -webkit-animation-duration: 6s;      
+                -webkit-animation-iteration-count: infinite;
+            animation-name: ibmkeys;
+            animation-duration: 6s; 
+            animation-iteration-count: infinite;
+        }
+	</style>
+</head>
+<body>
+	<div class="box"></div>
+</body>
+</html>
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 		
