@@ -1,0 +1,128 @@
+/*
+box-shadow: left offset top offset spread color inset or not
+*/
+
+/*
+text-shadow: left offset top offset spread color inset or not
+*/
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+border radius
+
+.box1{
+	border-bottom-right-radius: 20px;
+	border-bottom-left-radius: 20px;
+	border-top-right-radius: 20px;
+	border-top-left-radius: 20px;
+}
+.box2{
+	border-bottom-right-radius: 50px;
+	border-bottom-left-radius: 50px;
+	border-top-right-radius: 50px;
+	border-top-left-radius: 50px;
+}
+.box3{
+	border-bottom-right-radius: 50px;
+	border-top-left-radius: 50px;
+	border: 10px dashed black;
+}
+.box4{
+	border-radius: 50px 0px 50px 0px;
+}
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+<script src="lib/modernizr.custom.56726.js"></script>
+	<style>
+		div{
+			width: 100px;
+			height: 100px;
+			margin: 10px;
+			background: red;
+		}
+			
+		.box1{
+			border-radius: 10px;
+		}
+		/*
+		.no-borderradius .box1{
+			background: white;
+			background-image: url("images/reddy.png");
+		}
+		 */
+	</style>
+	<script>
+		window.onload = function(){
+			if(window.Modernizr.borderradius){
+				alert("border radius is supported")
+			}else{
+			alert("border radius is not supported");
+			// document.getElementsByTagName("div")[0].setAttribute("style", "background-image:url('images/reddy.png'); background-color:white")
+			document.getElementsByTagName("div")[0].style.backgroundImage = "images/reddy.png"
+			}
+		}
+	</script>
+</head>
+<body>
+	<div class="box1"></div>
+
+</body>
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+.box:hover{
+			/*
+			transform : skew(45deg);
+			transform : scale(2,1);
+			transform : rotate(45deg);
+			 */
+			box-shadow : -20px -20px 20px black;
+			transform : translate(20px, 20px);
+		}
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+<style>
+		.box{
+			width: 450px;
+			height: 250px;
+			background: #08a348; /* Old browsers */
+			background: -moz-linear-gradient(left,  red 0%, yellow 50%, green 100%); /* FF3.6+ */
+			background: -webkit-gradient(linear, left top, right top, color-stop(0%, yellow), color-stop(50%, green), color-stop(100%,#ed3417)); /* Chrome,Safari4+ */
+			background: -webkit-linear-gradient(left,  red 0%,yellow 50%,green 100%); /* Chrome10+,Safari5.1+ */
+			background: -o-linear-gradient(left,  red 0%, yellow 50%,green 100%); /* Opera 11.10+ */
+			background: -ms-linear-gradient(left,  red 0%, yellow 50%,green 100%); /* IE10+ */
+			background: linear-gradient(to right,  red 0%, yellow 50%,green 100%); /* W3C */
+			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='red', endColorstr='green',GradientType=1 ); /* IE6-9 */
+			
+			}
+	</style>
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+<style>	
+	@font-face{
+		font-family: "mindtree";
+		src : local("FastOstrich");
+		src : url("fonts/FastOstrich.eot");    /* IE9 Compat Modes */
+		src : 	url("fonts/FastOstrich.eot"),  /* IE6-IE8 */
+				url("fonts/FastOstrich.otf"),  /* desktop */
+				url("fonts/FastOstrich.svg"),  /* Legacy iOS */
+				url("fonts/FastOstrich.woff"), /* Modern Browsers */
+				url("fonts/FastOstrich.ttf");  /* Safari, Android, iOS */
+	}
+	p{
+		font-family: mindtree;
+	}
+	</style>
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+		
+		
+		
+		
