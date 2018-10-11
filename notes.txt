@@ -386,3 +386,58 @@ section{
 		
 		
 		
+bg-primary : blue
+bg-secondary : grey
+bg-success : green
+bg-danger : red
+bg-warning : yellow
+bg-info : blue green
+bg-light : silver
+bg-dark : lead / dark grey
+bg-white : white
+bg-transparent : transparent
+
+text-primary
+text-secondary
+text-success
+text-danger
+text-warning
+text-info
+text-light
+text-dark
+text-white
+text-transparent
+
+default block level elements will take 100% of parent
+blocks with class container will have padding on the top, left and right
+blocks with class container-fluid will be responsive
+
+each row uses 12 column layout
+
+media break points
+XL : min-width:1200px
+LG : min-width:992px
+MD : min-width:768px
+SM : min-width:576px
+
+xtra-SM : max-width:575.98px
+
+@media(min-width:1200px){body{background-color:red;}}
+
+divs with class row can have col classed child
+
+use class order-1 or order-2 to order these elements in a row
+
+
+TOOLTIP
+<button data-toggle="tooltip" data-placement="top" 		class="btn btn-success" title="Your Message Here">Rollover Me</button>
+<button data-toggle="tooltip" data-placement="right" 	class="btn btn-success" title="Your Message Here">Rollover Me</button>
+<button data-toggle="tooltip" data-placement="bottom" 	class="btn btn-success" title="Your Message Here">Rollover Me</button>
+<button data-toggle="tooltip" data-placement="left" 	class="btn btn-success" title="Your Message Here">Rollover Me</button>
+
+script
+$(function(){
+	$("[data-toggle = tooltip]").tooltip()
+})
+
+Title can also contain html tags as in html5 when you add attribute data-html="true"
